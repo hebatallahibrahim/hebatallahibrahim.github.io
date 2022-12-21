@@ -9,8 +9,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    height: 10000px;
-
+   
 }
 .main-btn {
 background-color: var(--red-color);
@@ -192,4 +191,11 @@ border-bottom: 1px solid white;
       color: var(--yellow-color);
 
     }
+
      /* end subscribe */
+
+     /* start footer */
+     .footer{
+      background-color: var(--dark-color);
+     }
+     /* end footer */
