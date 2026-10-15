@@ -1,420 +1,423 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bondi</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/bondi.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="img/logo.png" alt="" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#main"
-          aria-controls="main"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="main">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link p-2 p-lg-3 active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-2 p-lg-3" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-2 p-lg-3" href="#">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-2 p-lg-3" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-2 p-lg-3" href="#">Contact</a>
-            </li>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hebatallah Ibrahim — Full-Stack Developer & Team Leader</title>
+<meta name="description" content="Full-Stack Developer and Team Leader with 7+ years building ERP platforms, management systems, REST APIs and Flutter apps. Laravel · Node.js · React · Flutter.">
+<meta property="og:title" content="Hebatallah Ibrahim — Full-Stack Developer & Team Leader">
+<meta property="og:description" content="ERP platforms, management systems, dispatch platforms and websites — Laravel · Node.js · React · Flutter.">
+<meta property="og:image" content="https://hebatallahibrahim.github.io/assets/videos/bluefield-erp.webp">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b1020">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2338bdf8'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%230b1020'%3EHI%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1020; --bg2:#0f172a; --card:#111a2e; --line:#1e2a44; --text:#e6ebf5; --muted:#94a3b8;
+  --accent:#38bdf8; --accent2:#a78bfa; --ok:#34d399; --radius:18px;
+  --shadow:0 20px 50px -20px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.15;letter-spacing:-.02em}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+section{padding:96px 0}
+.eyebrow{color:var(--accent);font:600 13px/1 Inter;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.section-title{font-size:clamp(28px,4vw,42px);margin-bottom:14px}
+.section-sub{color:var(--muted);max-width:640px;margin-bottom:44px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(30,42,68,.6)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font:700 18px "Space Grotesk"}
+.logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0b1020;font-size:14px}
+.links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:15px;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#06101f}
+.btn-ghost{border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent)}
+.btn-sm{padding:8px 14px;font-size:14px}
+
+/* hero */
+.hero{padding:110px 0 80px;position:relative}
+.hero::before{content:"";position:absolute;inset:-200px 0 auto;height:700px;background:radial-gradient(600px 300px at 20% 30%,rgba(56,189,248,.16),transparent 70%),radial-gradient(500px 300px at 85% 10%,rgba(167,139,250,.14),transparent 70%);pointer-events:none;z-index:-1}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);border-radius:99px;font-size:13px;color:var(--muted);margin-bottom:26px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(52,211,153,.18)}
+.hero h1{font-size:clamp(40px,7vw,76px);margin-bottom:18px}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .role{font-size:clamp(18px,2.4vw,22px);color:var(--text);margin-bottom:16px;font-weight:500}
+.hero p.lead{color:var(--muted);max-width:680px;font-size:17px;margin-bottom:34px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+.stat{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:linear-gradient(180deg,rgba(17,26,46,.8),rgba(17,26,46,.3))}
+.stat strong{display:block;font:700 34px "Space Grotesk";margin-bottom:2px}
+.stat span{color:var(--muted);font-size:14px}
+
+/* featured systems */
+.feature{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;padding:28px;border:1px solid var(--line);border-radius:24px;background:var(--card);margin-bottom:28px;box-shadow:var(--shadow)}
+.feature:nth-child(even){grid-template-columns:1fr 1.25fr}
+.feature:nth-child(even) .media{order:2}
+.media{border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--line);aspect-ratio:16/9}
+.media video,.media img{width:100%;height:100%;object-fit:cover}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);padding:4px 10px;border-radius:99px;margin-bottom:14px}
+.feature h3{font-size:28px;margin-bottom:12px}
+.feature p{color:var(--muted);margin-bottom:18px}
+.bullets{list-style:none;display:grid;gap:8px;margin-bottom:22px}
+.bullets li{padding-left:24px;position:relative;font-size:15px}
+.bullets li::before{content:"";position:absolute;left:0;top:9px;width:12px;height:6px;border-left:2px solid var(--ok);border-bottom:2px solid var(--ok);transform:rotate(-45deg)}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.stack span{font-size:12.5px;padding:5px 10px;border-radius:8px;background:var(--bg2);border:1px solid var(--line);color:#cbd5e1}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+
+/* fleetspeed gallery */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.trio figure{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg2)}
+.trio img{aspect-ratio:16/10;object-fit:cover;object-position:top;width:100%}
+.trio figcaption{font-size:13px;color:var(--muted);padding:10px 12px}
+
+/* systems grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card);display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(56,189,248,.5)}
+.thumb{aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--line);background:var(--bg2)}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.card:hover .thumb img{transform:scale(1.04)}
+.card .body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:19px}
+.card p{color:var(--muted);font-size:14.5px;flex:1}
+.card .meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-top:6px}
+.card .meta a{color:var(--accent);font-weight:600}
+.card .meta a:hover{text-decoration:underline}
+.thumb.placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#132036,#1b1640)}
+.thumb.placeholder span{font:600 15px "Space Grotesk";color:#cbd5e1;text-align:center;padding:20px}
+
+/* experience */
+.timeline{position:relative;padding-left:28px;border-left:1px solid var(--line);display:grid;gap:34px}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:-34px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.job header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px;margin-bottom:8px}
+.job h3{font-size:20px}
+.job h3 em{font-style:normal;color:var(--accent)}
+.job time{color:var(--muted);font-size:14px}
+.job ul{color:var(--muted);padding-left:18px;display:grid;gap:4px;font-size:15px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--card)}
+.skill h4{font:600 15px Inter;margin-bottom:12px;color:var(--text)}
+.skill .stack{margin:0}
+
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+
+/* contact */
+.contact{text-align:center;border:1px solid var(--line);border-radius:28px;padding:64px 24px;background:radial-gradient(500px 200px at 50% 0,rgba(56,189,248,.14),transparent 70%),var(--card)}
+.contact h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
+.contact p{color:var(--muted);margin-bottom:28px}
+.contact .cta{justify-content:center}
+footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px}
+
+@media (max-width:900px){
+  .links{display:none}
+  .feature,.feature:nth-child(even){grid-template-columns:1fr;padding:18px}
+  .feature:nth-child(even) .media{order:0}
+  .grid,.skills{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  section{padding:70px 0}
+  .hero{padding:70px 0 50px}
+  .grid,.skills,.edu,.trio{grid-template-columns:1fr}
+  .stat strong{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo"><b>HI</b>Hebatallah Ibrahim</a>
+    <div class="links">
+      <a href="#systems">Systems</a>
+      <a href="#websites">Websites</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="btn btn-ghost btn-sm" href="assets/Hebatallah-Ibrahim-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="badge"><i></i>Open to new opportunities · UAE / Remote</div>
+    <h1>Hi, I'm <span>Hebatallah</span>.<br>I build business systems.</h1>
+    <div class="role">Full-Stack Developer &amp; Team Leader — PHP / Laravel · Node.js · React · Flutter</div>
+    <p class="lead">7+ years building ERP platforms, management and reporting systems, REST APIs and cross-platform mobile apps — from requirements to production. I lead teams, design modular backends with role-based access and approval workflows, and ship React dashboards and Flutter apps on top of them.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#systems">View my work ↓</a>
+      <a class="btn btn-ghost" href="https://github.com/hebatallahibrahim" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/heba-ibrahim-b4320b221" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>7+</strong><span>Years of experience</span></div>
+      <div class="stat"><strong>5</strong><span>Live management systems</span></div>
+      <div class="stat"><strong>9+</strong><span>Company &amp; charity websites</span></div>
+      <div class="stat"><strong>3</strong><span>Countries: UAE · KSA · Egypt</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="systems">
+  <div class="wrap">
+    <div class="eyebrow">Featured systems</div>
+    <h2 class="section-title">Systems running in production</h2>
+    <p class="section-sub">Full platforms with dashboards, roles &amp; permissions, workflows and reporting. Live systems require login — demo access and walkthroughs are available on request.</p>
+
+    <div class="features">
+      <article class="feature">
+        <div class="media">
+          <video controls preload="none" playsinline poster="assets/videos/crs-baitulmaal.webp">
+            <source src="assets/videos/crs-baitulmaal.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div>
+          <span class="tag">International organization</span>
+          <h3>CRS — Baitulmaal</h3>
+          <p>A project management and reporting system for Baitulmaal, an international humanitarian organization. It tracks programs and projects across sectors, from drafting to completion, with reports for management.</p>
+          <ul class="bullets">
+            <li>Programs dashboard with totals and active/inactive trends</li>
+            <li>Project lifecycle: drafts, approvals, archive</li>
+            <li>Advanced search, filters and exportable reports</li>
+            <li>Multi-language admin with role-based access</li>
           </ul>
-          <div class="search ps-3 pe-3 d-none d-lg-block">
-            <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="stack"><span>Laravel</span><span>MySQL</span><span>REST API</span><span>RBAC</span><span>Reporting</span></div>
+          <div class="actions">
+            <a class="btn btn-ghost btn-sm" href="https://baitulmaal.touristella.com/admin/login" target="_blank" rel="noopener">Live system ↗</a>
           </div>
-          <a class="btn rounded-pill main-btn" href="#">Login</a>
         </div>
-      </div>
-    </nav>
-    <div class="landing d-flex justify-content-center align-items-center">
-      <div class="text-center text-light">
-        <h1>Taste the Creativity</h1>
-        <p class="fs-6 text-white-50 mb-5">We make awesome graphic and web design</p>
-        <a class="btn rounded-pill main-btn" href="#">Get Started</a>
-      </div>
+      </article>
+
+      <article class="feature">
+        <div class="media">
+          <video controls preload="none" playsinline poster="assets/videos/bluefield-erp.webp">
+            <source src="assets/videos/bluefield-erp.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div>
+          <span class="tag">ERP · SaaS</span>
+          <h3>BlueField ERP</h3>
+          <p>One operating system for the whole business: catalog, bookings, loyalty wallet, WhatsApp automation, inventory, accounting and VAT — built as integrated modules with role-based access and reporting dashboards.</p>
+          <ul class="bullets">
+            <li>VAT-ready e-invoices with QR codes; the ledger posts itself</li>
+            <li>Double-entry accounting and one-click VAT report</li>
+            <li>WhatsApp bot &amp; automation CRM</li>
+            <li>Multi-currency (USD, AED, SAR, QAR, EGP…) and Arabic/English</li>
+          </ul>
+          <div class="stack"><span>Laravel</span><span>React</span><span>MySQL</span><span>Modular architecture</span><span>RBAC</span></div>
+          <div class="actions">
+            <a class="btn btn-ghost btn-sm" href="https://digital.blue-field.co/" target="_blank" rel="noopener">Visit product ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="media"><img src="assets/shots/fleetspeed.webp" alt="FleetSpeed landing page" loading="lazy"></div>
+        <div>
+          <span class="tag">Logistics · Web + Mobile</span>
+          <h3>FleetSpeed — Intelligent Delivery Dispatch</h3>
+          <p>A dispatch platform for delivery operations: a control dashboard for the operations team, a web portal for riders, and a companion mobile app — all on the same API.</p>
+          <ul class="bullets">
+            <li>Rule-based and AI-assisted dispatch, rider assignment and stacking</li>
+            <li>Real-time SLA control and priority scoring</li>
+            <li>Rider portal and Flutter mobile app for drivers</li>
+            <li>Arabic / English interface</li>
+          </ul>
+          <div class="stack"><span>Node.js</span><span>React</span><span>Flutter</span><span>REST API</span><span>Real-time</span></div>
+          <div class="actions">
+            <a class="btn btn-ghost btn-sm" href="http://fleetspeed.co/" target="_blank" rel="noopener">Website ↗</a>
+            <a class="btn btn-ghost btn-sm" href="https://dashboard.fleetspeed.co/" target="_blank" rel="noopener">Dashboard ↗</a>
+            <a class="btn btn-ghost btn-sm" href="https://dashboard.fleetspeed.co/rider" target="_blank" rel="noopener">Rider portal ↗</a>
+          </div>
+        </div>
+      </article>
     </div>
-    <div class="features text-center pt-5 pb-5">
-      <div class="container">
-        <div class="main-title mt-5 mb-5 position-relative">
-          <img class="mb-4" src="img/title.png" alt="" />
-          <h2>We are Good at</h2>
-          <p class="text-black-50 text-uppercase">Some Of These Stuff Under</p>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <div class="feat">
-              <div class="icon-holder position-relative">
-                <i class="fa-solid fa-1 position-absolute bottom-0 number"></i>
-                <i class="fa-solid fa-pencil fa-4x position-absolute bottom-0 icon"></i>
-              </div>
-              <h4 class="mb-3 mt-3 text-uppercase">Graphic Design</h4>
-              <p class="text-black-50 lh-lg">
-                Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed,
-                convallis at tellus.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="feat">
-              <div class="icon-holder position-relative">
-                <i class="fa-solid fa-2 position-absolute bottom-0 number"></i>
-                <i class="fa-solid fa-tv fa-4x position-absolute bottom-0 icon"></i>
-              </div>
-              <h4 class="mb-3 mt-3 text-uppercase">Graphic Design</h4>
-              <p class="text-black-50 lh-lg">
-                Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed,
-                convallis at tellus.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="feat">
-              <div class="icon-holder position-relative">
-                <i class="fa-solid fa-3 position-absolute bottom-0 number"></i>
-                <i class="fa-solid fa-plug fa-4x position-absolute bottom-0 icon"></i>
-              </div>
-              <h4 class="mb-3 mt-3 text-uppercase">Graphic Design</h4>
-              <p class="text-black-50 lh-lg">
-                Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed,
-                convallis at tellus.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+    <div class="trio">
+      <figure><img src="assets/shots/fleetspeed-dash.webp" alt="FleetSpeed dispatch dashboard login" loading="lazy"><figcaption>FleetSpeed · Dispatch dashboard</figcaption></figure>
+      <figure><img src="assets/shots/fleetspeed-rider.webp" alt="FleetSpeed rider portal login" loading="lazy"><figcaption>FleetSpeed · Rider portal &amp; mobile app</figcaption></figure>
+      <figure><img src="assets/shots/bluefield-erp.webp" alt="BlueField ERP product page" loading="lazy"><figcaption>BlueField · Product site</figcaption></figure>
     </div>
-    <div class="our-work text-center pt-5 pb-5">
-      <div class="container">
-        <div class="main-title mt-5 mb-5 position-relative">
-          <img class="mb-4" src="img/title.png" alt="" />
-          <h2>We Make This</h2>
-          <p class="text-black-50 text-uppercase">Prepare To Be Amazed</p>
+
+    <h3 style="font-size:24px;margin:64px 0 22px">More systems</h3>
+    <div class="grid">
+      <article class="card">
+        <a class="thumb" href="https://waterwells.touristella.com/admin" target="_blank" rel="noopener"><img src="assets/shots/waterwells.webp" alt="Water Management System login" loading="lazy"></a>
+        <div class="body">
+          <h3>Water-Well Drilling Management</h3>
+          <p>Tracks well-drilling projects from planning to completion, with progress monitoring and reports.</p>
+          <div class="meta"><span>Laravel · MySQL</span><a href="https://waterwells.touristella.com/admin" target="_blank" rel="noopener">Live ↗</a></div>
         </div>
-        <ul class="list-unstyled d-flex justify-content-center mt-5 mb-5">
-          <li class="active rounded-pill">All</li>
-          <li>Design</li>
-          <li>Code</li>
-          <li>Photo</li>
-          <li>App</li>
+      </article>
+      <article class="card">
+        <div class="thumb placeholder"><span>Faculty Affairs System<br><small style="color:var(--muted);font-weight:500">Alexandria University</small></span></div>
+        <div class="body">
+          <h3>Faculty Affairs System</h3>
+          <p>Manages faculty staff records and academic affairs for the Faculty of Agriculture, Alexandria University, in one platform.</p>
+          <div class="meta"><span>Laravel · MySQL</span><span>Demo on request</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://baitulmaal.touristella.com/admin/login" target="_blank" rel="noopener"><img src="assets/shots/baitulmaal.webp" alt="Baitulmaal CRS login" loading="lazy"></a>
+        <div class="body">
+          <h3>CRS — Baitulmaal (login)</h3>
+          <p>Bilingual sign-in for the CRS platform: streamlined logistics and automated resource tracking.</p>
+          <div class="meta"><span>Laravel · RBAC</span><a href="https://baitulmaal.touristella.com/admin/login" target="_blank" rel="noopener">Live ↗</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="websites" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Websites</div>
+    <h2 class="section-title">Company, product &amp; charity websites</h2>
+    <p class="section-sub">Responsive, multilingual websites for clients in the UAE, Saudi Arabia, Egypt, the USA and Canada.</p>
+    <div class="grid">
+      <article class="card">
+        <a class="thumb" href="https://impactassociates.ae/" target="_blank" rel="noopener"><img src="assets/shots/impactassociates.webp" alt="Impact Associates website" loading="lazy"></a>
+        <div class="body"><h3>Impact Associates</h3><p>Consulting firm in the UAE working with government entities.</p>
+        <div class="meta"><span>UAE · Consulting</span><a href="https://impactassociates.ae/" target="_blank" rel="noopener">Visit ↗</a></div></div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://handealgroups.com/" target="_blank" rel="noopener"><img src="assets/shots/handeal.webp" alt="Handeal Groups website" loading="lazy"></a>
+        <div class="body"><h3>Handeal Groups</h3><p>Consulting and technology solutions — digital transformation partner.</p>
+        <div class="meta"><span>UAE · Technology</span><a href="https://handealgroups.com/" target="_blank" rel="noopener">Visit ↗</a></div></div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://blue-field.co/" target="_blank" rel="noopener"><img src="assets/shots/bluefield.webp" alt="BlueField website" loading="lazy"></a>
+        <div class="body"><h3>BlueField</h3><p>Digital marketing and photography agency, Arabic / English.</p>
+        <div class="meta"><span>Marketing</span><a href="https://blue-field.co/" target="_blank" rel="noopener">Visit ↗</a></div></div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://salamcharityusa.org/" target="_blank" rel="noopener"><img src="assets/shots/salamusa.webp" alt="Salam Charity USA website" loading="lazy"></a>
+        <div class="body"><h3>Salam Charity USA</h3><p>Charity website with donations and water-well sponsorship.</p>
+        <div class="meta"><span>USA · Non-profit</span><a href="https://salamcharityusa.org/" target="_blank" rel="noopener">Visit ↗</a></div></div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://salamcharitycanada.org/" target="_blank" rel="noopener"><img src="assets/shots/salamcanada.webp" alt="Salam Charity Canada website" loading="lazy"></a>
+        <div class="body"><h3>Salam Charity Canada</h3><p>Bilingual (English / French) charity website with donations.</p>
+        <div class="meta"><span>Canada · Non-profit</span><a href="https://salamcharitycanada.org/" target="_blank" rel="noopener">Visit ↗</a></div></div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://biz-center.net/" target="_blank" rel="noopener"><img src="assets/shots/bizcenter.webp" alt="Biz Center website" loading="lazy"></a>
+        <div class="body"><h3>Biz Center</h3><p>Arabic (RTL) website for an entrepreneurship cooperative — services, membership and initiatives.</p>
+        <div class="meta"><span>KSA · Arabic RTL</span><a href="https://biz-center.net/" target="_blank" rel="noopener">Visit ↗</a></div></div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://vitalenutrition.com/" target="_blank" rel="noopener"><img src="assets/shots/vitale.webp" alt="Vitalé Nutrition website" loading="lazy"></a>
+        <div class="body"><h3>Vitalé Nutrition</h3><p>Healthy-snacks brand with product shop, Arabic / English.</p>
+        <div class="meta"><span>KSA · E-commerce</span><a href="https://vitalenutrition.com/" target="_blank" rel="noopener">Visit ↗</a></div></div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="https://sheno-eg.com/" target="_blank" rel="noopener"><img src="assets/shots/sheno.webp" alt="Sheno Furniture website" loading="lazy"></a>
+        <div class="body"><h3>Sheno Furniture</h3><p>Furniture manufacturing company website, multilingual.</p>
+        <div class="meta"><span>Egypt · Manufacturing</span><a href="https://sheno-eg.com/" target="_blank" rel="noopener">Visit ↗</a></div></div>
+      </article>
+      <article class="card">
+        <a class="thumb" href="http://fleetspeed.co/" target="_blank" rel="noopener"><img src="assets/shots/fleetspeed.webp" alt="FleetSpeed website" loading="lazy"></a>
+        <div class="body"><h3>FleetSpeed</h3><p>Product marketing site for the FleetSpeed dispatch platform.</p>
+        <div class="meta"><span>Logistics · SaaS</span><a href="http://fleetspeed.co/" target="_blank" rel="noopener">Visit ↗</a></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">Experience</div>
+    <h2 class="section-title">Where I've worked</h2>
+    <p class="section-sub">From backend developer to leading full-stack teams.</p>
+    <div class="timeline">
+      <div class="job">
+        <header><h3>Full-Stack Developer Team Leader — <em>OPDEV Agency</em></h3><time>Feb 2025 – Present · UAE</time></header>
+        <ul>
+          <li>Lead the full-stack team building management platforms for international and academic clients.</li>
+          <li>Delivered CRS for Baitulmaal and the Faculty Affairs System for Alexandria University.</li>
+          <li>Design modular Laravel and Node.js backends with RBAC, approval workflows and reporting; React dashboards and Flutter apps on the same REST APIs.</li>
+          <li>Gather requirements with stakeholders, plan sprints and run code reviews.</li>
         </ul>
-        <div class="row">
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="box mb-3 bg-white" data-work="Application">
-              <img class="img-fluid" src="img/work-01.jpg" alt="" />
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="box mb-3 bg-white" data-work="Application">
-              <img class="img-fluid" src="img/work-02.jpg" alt="" />
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="box mb-3 bg-white" data-work="Application">
-              <img class="img-fluid" src="img/work-03.jpg" alt="" />
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="box mb-3 bg-white" data-work="Application">
-              <img class="img-fluid" src="img/work-04.jpg" alt="" />
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="box mb-3 bg-white" data-work="Application">
-              <img class="img-fluid" src="img/work-05.jpg" alt="" />
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="box mb-3 bg-white" data-work="Application">
-              <img class="img-fluid" src="img/work-06.jpg" alt="" />
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="box mb-3 bg-white" data-work="Application">
-              <img class="img-fluid" src="img/work-07.jpg" alt="" />
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="box mb-3 bg-white" data-work="Application">
-              <img class="img-fluid" src="img/work-08.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center mt-5">
-          <a class="btn rounded-pill main-btn text-uppercase" href="#">I Want More</a>
-        </div>
+      </div>
+      <div class="job">
+        <header><h3>Full-Stack Developer Team Leader — <em>Sketch Technology</em></h3><time>Aug 2023 – Jan 2025 · UAE</time></header>
+        <ul>
+          <li>Led a team delivering full-stack web and mobile solutions for clients.</li>
+          <li>Designed scalable architecture with Laravel, Node.js and React; shipped Flutter apps integrated with backend APIs.</li>
+          <li>Improved API performance and optimized application workflows.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <header><h3>Backend Developer — <em>Handeal Groups</em></h3><time>Jun 2021 – May 2023 · UAE</time></header>
+        <ul>
+          <li>Built backend modules and services with PHP and Laravel; integrated third-party APIs.</li>
+          <li>Optimized database queries and strengthened security, authentication and API reliability.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <header><h3>Backend Developer — <em>Power-Tech</em></h3><time>Nov 2018 – Jun 2021 · Saudi Arabia</time></header>
+        <ul>
+          <li>Built backend services and internal tools with PHP; maintained and upgraded existing applications.</li>
+        </ul>
       </div>
     </div>
-    <div class="stuff pt-5">
-      <div class="container">
-        <div class="main-title text-center mt-5 mb-5 position-relative">
-          <img class="mb-4" src="img/title.png" alt="" />
-          <h2>Some Stuff About Us</h2>
-          <p class="text-black-50 text-uppercase">The Great Team</p>
-        </div>
-        <p class="description text-center mb-5 text-black-50 m-auto">
-          Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-          Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.
-        </p>
-        <div class="row align-items-center">
-          <div class="col-lg-4 mb-4 text-center text-md-start">
-            <div class="text">
-              <h4>Retina Design</h4>
-              <p class="text-black-50 fs-6">
-                Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget
-                tincidunt nibh pulvinar a.
-              </p>
-              <p class="text-black-50 fs-6">
-                Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie
-                malesuada.
-              </p>
-              <a class="btn rounded-pill main-btn text-uppercase" href="#">Order Me One</a>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="image">
-              <img class="img-fluid" src="img/laptop.png" alt="" />
-            </div>
-          </div>
-        </div>
+  </div>
+</section>
+
+<section id="skills" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow">Skills</div>
+    <h2 class="section-title">Toolbox</h2>
+    <p class="section-sub">The stack I use to take a system from requirements to production.</p>
+    <div class="skills">
+      <div class="skill"><h4>Backend</h4><div class="stack"><span>PHP</span><span>Laravel</span><span>Node.js</span><span>Express</span><span>REST APIs</span><span>Sanctum / JWT</span></div></div>
+      <div class="skill"><h4>Frontend</h4><div class="stack"><span>React</span><span>TypeScript</span><span>JavaScript ES6+</span><span>jQuery</span><span>HTML5 / CSS3</span><span>Bootstrap</span></div></div>
+      <div class="skill"><h4>Mobile</h4><div class="stack"><span>Flutter</span><span>Dart</span><span>Android &amp; iOS</span><span>API integration</span></div></div>
+      <div class="skill"><h4>ERP &amp; business systems</h4><div class="stack"><span>Modular design</span><span>RBAC</span><span>Workflows &amp; approvals</span><span>Reporting dashboards</span></div></div>
+      <div class="skill"><h4>Data &amp; architecture</h4><div class="stack"><span>MySQL</span><span>SQL</span><span>Query optimization</span><span>OOP / SOLID</span><span>Design patterns</span><span>MVC</span></div></div>
+      <div class="skill"><h4>Tools &amp; AI</h4><div class="stack"><span>Git / GitHub</span><span>Postman</span><span>WordPress</span><span>Copilot</span><span>Cursor</span><span>Claude</span></div></div>
+    </div>
+    <div class="edu">
+      <div class="skill"><h4>B.Sc. Computer Science &amp; Statistics</h4><p style="color:var(--muted);font-size:15px">Alexandria University · 2014 – 2018<br>GPA 3.7 — Excellent with Honors</p></div>
+      <div class="skill"><h4>Full Stack Open Source (PHP) Track</h4><p style="color:var(--muted);font-size:15px">Information Technology Institute (ITI) · 2021 – 2022<br>Final grade: Excellent</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div class="eyebrow">Contact</div>
+      <h2>Let's build your next system.</h2>
+      <p>Available for full-time roles and freelance projects. Demo access to live systems on request.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:hebawalid1012@gmail.com">hebawalid1012@gmail.com</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/heba-ibrahim-b4320b221" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/hebatallahibrahim" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="assets/Hebatallah-Ibrahim-CV.pdf" target="_blank" rel="noopener">Download CV</a>
       </div>
     </div>
-    <div class="team text-center pb-5 pt-5">
-      <div class="container pb-5 pt-5">
-        <h2 class="fw-bold">Meet The Team</h2>
-        <p class="text-black-50 mb-5">
-          Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-          Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.
-        </p>
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <div class="box bg-white">
-              <img class="img-fluid" src="img/team-1.png" alt="" />
-              <h4 class="p-3 text-light">Luke Skywalker</h4>
-              <blockquote class="text-black-50 p-3">
-                “I don't understand how we got by those troops. I thought we were dead.“
-              </blockquote>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="box bg-white">
-              <img class="img-fluid" src="img/team-2.png" alt="" />
-              <h4 class="p-3 text-light">Luke Skywalker</h4>
-              <blockquote class="text-black-50 p-3">
-                “I don't understand how we got by those troops. I thought we were dead.“
-              </blockquote>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="box bg-white">
-              <img class="img-fluid" src="img/team-3.png" alt="" />
-              <h4 class="p-3 text-light">Luke Skywalker</h4>
-              <blockquote class="text-black-50 p-3">
-                “I don't understand how we got by those troops. I thought we were dead.“
-              </blockquote>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="box bg-white">
-              <img class="img-fluid" src="img/team-4.png" alt="" />
-              <h4 class="p-3 text-light">Luke Skywalker</h4>
-              <blockquote class="text-black-50 p-3">
-                “I don't understand how we got by those troops. I thought we were dead.“
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="techs pt-5 pb-5 text-center">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
-            <img class="img-fluid" src="img/tech-1.png" alt="" />
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
-            <img class="img-fluid" src="img/tech-2.png" alt="" />
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
-            <img class="img-fluid" src="img/tech-3.png" alt="" />
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
-            <img class="img-fluid" src="img/tech-4.png" alt="" />
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
-            <img class="img-fluid" src="img/tech-1.png" alt="" />
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
-            <img class="img-fluid" src="img/tech-2.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="project text-center pt-5 pb-5 text-light">
-      <h2>Start Your Project Now</h2>
-      <p class="text-white-50">Leave your description and we start the engine.Don't worry,you can cancel anytime</p>
-      <div class="d-flex justify-content-center mt-5 mb-5">
-        <a class="btn rounded-pill main-btn text-uppercase" href="#">Start Project</a>
-      </div>
-    </div>
-    <div class="blog pt-5 pb-5">
-      <div class="container">
-        <div class="main-title text-center mt-5 mb-5 position-relative">
-          <img class="mb-2" src="img/title.png" alt="" />
-          <h2>Read Our Blog</h2>
-          <p class="text-uppercase text-black-50">New Stories</p>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <div class="card">
-              <img src="img/blog-1.jpg" class="card-img-top" alt="Blog Post" />
-              <div class="card-body">
-                <span class="text-black-50">Jan 17, 2022</span>
-                <h5 class="card-title">Some Awesome Blog Title Here</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card">
-              <img src="img/blog-2.jpg" class="card-img-top" alt="Blog Post" />
-              <div class="card-body">
-                <span class="text-black-50">Jan 17, 2022</span>
-                <h5 class="card-title">Some Awesome Blog Title Here</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card">
-              <img src="img/blog-3.jpg" class="card-img-top" alt="Blog Post" />
-              <div class="card-body">
-                <span class="text-black-50">Jan 17, 2022</span>
-                <h5 class="card-title">Some Awesome Blog Title Here</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center mt-5 mb-5">
-          <a class="btn rounded-pill main-btn text-uppercase" href="#">More Stories</a>
-        </div>
-      </div>
-    </div>
-    <div class="subscribe pt-5 pb-5 text-center text-md-start">
-      <div class="container">
-        <form class="row align-items-center">
-          <div class="col-md-6 col-lg-3">
-            <div class="fw-bold fs-5 mb-3">Subscribe to our Newsletter:</div>
-          </div>
-          <div class="col-md-6 col-lg-7 mb-3">
-            <input class="w-100 text-light p-2 bg-transparent" type="text" placeholder="Enter Email Address" />
-          </div>
-          <div class="col-md-6 col-lg-2">
-            <input class="btn rounded-pill" type="submit" value="Subscribe" />
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="footer pt-5 pb-5 text-white-50 text-center text-md-start">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <div class="info mb-5">
-              <img src="img/logo.png" alt="" class="mb-4" />
-              <p class="mb-5">
-                Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed,
-                convallis at tellus.
-              </p>
-              <div class="copyright">
-                Created By <span>Graphberry</span>
-                <div>&copy; 2022 - <span>Bondi Inc</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-2">
-            <div class="links">
-              <h5 class="text-light">Links</h5>
-              <ul class="list-unstyled lh-lg">
-                <li>Home</li>
-                <li>Our Services</li>
-                <li>Portfolio</li>
-                <li>Testimonials</li>
-                <li>Support</li>
-                <li>Terms and Condition</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-2">
-            <div class="links">
-              <h5 class="text-light">About Us</h5>
-              <ul class="list-unstyled lh-lg">
-                <li>Sign In</li>
-                <li>Register</li>
-                <li>About Us</li>
-                <li>Blog</li>
-                <li>Contact Us</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="contact">
-              <h5 class="text-light">Contact Us</h5>
-              <p class="lh-lg mt-3 mb-5">Get in touch with us via mail phone.We are waiting for your call or message</p>
-              <a class="btn rounded-pill main-btn w-100" href="#">graphberry@gmail.com</a>
-              <ul class="d-flex mt-5 list-unstyled gap-3">
-                <li>
-                  <a class="d-block text-light" href="#"
-                    ><i class="fa-brands fa-facebook fa-lg facebook rounded-circle p-2"></i
-                  ></a>
-                </li>
-                <li>
-                  <a class="d-block text-light" href="#"
-                    ><i class="fa-brands fa-twitter fa-lg twitter rounded-circle p-2"></i
-                  ></a>
-                </li>
-                <li>
-                  <a class="d-block text-light" href="#"
-                    ><i class="fa-brands fa-linkedin fa-lg linkedin rounded-circle p-2"></i
-                  ></a>
-                </li>
-                <li>
-                  <a class="d-block text-light" href="#"
-                    ><i class="fa-brands fa-youtube fa-lg youtube rounded-circle p-2"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/all.min.js"></script>
-  </body>
+  </div>
+</section>
+
+<footer>© <span id="y">2026</span> Hebatallah Ibrahim</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
 </html>
