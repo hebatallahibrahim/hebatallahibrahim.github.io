@@ -45,6 +45,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .btn-ghost{border:1px solid var(--line);color:var(--text)}
 .btn-ghost:hover{border-color:var(--accent)}
 .btn-sm{padding:8px 14px;font-size:14px}
+.btn-wa{background:#25d366;color:#06101f}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#06101f;box-shadow:0 10px 30px -8px rgba(0,0,0,.6);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px}
 
 /* hero */
 .hero{padding:110px 0 80px;position:relative}
@@ -81,6 +85,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
 .trio figure{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg2)}
 .trio img{aspect-ratio:16/10;object-fit:cover;object-position:top;width:100%}
+.trio img.contain{object-fit:contain;object-position:center;background:linear-gradient(135deg,#132036,#1b1640);padding:10px 0}
 .trio figcaption{font-size:13px;color:var(--muted);padding:10px 12px}
 
 /* systems grid */
@@ -163,6 +168,7 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px}
     <p class="lead">7+ years building ERP platforms, management and reporting systems, REST APIs and cross-platform mobile apps — from requirements to production. I lead teams, design modular backends with role-based access and approval workflows, and ship React dashboards and Flutter apps on top of them.</p>
     <div class="cta">
       <a class="btn btn-primary" href="#systems">View my work ↓</a>
+      <a class="btn btn-wa" href="https://wa.me/201157686680" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>WhatsApp</a>
       <a class="btn btn-ghost" href="https://github.com/hebatallahibrahim" target="_blank" rel="noopener">GitHub</a>
       <a class="btn btn-ghost" href="https://linkedin.com/in/heba-ibrahim-b4320b221" target="_blank" rel="noopener">LinkedIn</a>
     </div>
@@ -251,15 +257,15 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px}
     </div>
 
     <div class="trio">
-      <figure><img src="assets/shots/fleetspeed-dash.webp" alt="FleetSpeed dispatch dashboard login" loading="lazy"><figcaption>FleetSpeed · Dispatch dashboard</figcaption></figure>
-      <figure><img src="assets/shots/fleetspeed-rider.webp" alt="FleetSpeed rider portal login" loading="lazy"><figcaption>FleetSpeed · Rider portal &amp; mobile app</figcaption></figure>
+      <figure><img src="assets/shots/fleetspeed-billing.webp" alt="FleetSpeed client billing dashboard" loading="lazy"><figcaption>FleetSpeed · Client billing dashboard</figcaption></figure>
+      <figure><img class="contain" src="assets/shots/fleetspeed-rider-app.webp" alt="FleetSpeed rider mobile app profile" loading="lazy"><figcaption>FleetSpeed · Rider mobile app</figcaption></figure>
       <figure><img src="assets/shots/bluefield-erp.webp" alt="BlueField ERP product page" loading="lazy"><figcaption>BlueField · Product site</figcaption></figure>
     </div>
 
     <h3 style="font-size:24px;margin:64px 0 22px">More systems</h3>
     <div class="grid">
       <article class="card">
-        <a class="thumb" href="https://waterwells.touristella.com/admin" target="_blank" rel="noopener"><img src="assets/shots/waterwells.webp" alt="Water Management System login" loading="lazy"></a>
+        <a class="thumb" href="https://waterwells.touristella.com/admin" target="_blank" rel="noopener"><img src="assets/shots/waterwells-stages.webp" alt="Water Management System project engineering stages" loading="lazy"></a>
         <div class="body">
           <h3>Water-Well Drilling Management</h3>
           <p>Tracks well-drilling projects from planning to completion, with progress monitoring and reports.</p>
@@ -267,7 +273,7 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px}
         </div>
       </article>
       <article class="card">
-        <div class="thumb placeholder"><span>Faculty Affairs System<br><small style="color:var(--muted);font-weight:500">Alexandria University</small></span></div>
+        <div class="thumb"><img style="object-position:right top" src="assets/shots/faculty.webp" alt="Faculty Affairs System dashboard" loading="lazy"></div>
         <div class="body">
           <h3>Faculty Affairs System</h3>
           <p>Manages faculty staff records and academic affairs for the Faculty of Agriculture, Alexandria University, in one platform.</p>
@@ -275,10 +281,10 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px}
         </div>
       </article>
       <article class="card">
-        <a class="thumb" href="https://baitulmaal.touristella.com/admin/login" target="_blank" rel="noopener"><img src="assets/shots/baitulmaal.webp" alt="Baitulmaal CRS login" loading="lazy"></a>
+        <a class="thumb" href="https://baitulmaal.touristella.com/admin/login" target="_blank" rel="noopener"><img style="object-position:left top" src="assets/shots/crs-dashboard.webp" alt="Baitulmaal CRS dashboard" loading="lazy"></a>
         <div class="body">
-          <h3>CRS — Baitulmaal (login)</h3>
-          <p>Bilingual sign-in for the CRS platform: streamlined logistics and automated resource tracking.</p>
+          <h3>CRS — Baitulmaal</h3>
+          <p>Dashboard with program totals and trends, project creation, reports and partner management.</p>
           <div class="meta"><span>Laravel · RBAC</span><a href="https://baitulmaal.touristella.com/admin/login" target="_blank" rel="noopener">Live ↗</a></div>
         </div>
       </article>
@@ -409,6 +415,7 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px}
       <p>Available for full-time roles and freelance projects. Demo access to live systems on request.</p>
       <div class="cta">
         <a class="btn btn-primary" href="mailto:hebawalid1012@gmail.com">hebawalid1012@gmail.com</a>
+        <a class="btn btn-wa" href="https://wa.me/201157686680" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>+20 115 768 6680</a>
         <a class="btn btn-ghost" href="https://linkedin.com/in/heba-ibrahim-b4320b221" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/hebatallahibrahim" target="_blank" rel="noopener">GitHub</a>
         <a class="btn btn-ghost" href="assets/Hebatallah-Ibrahim-CV.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -416,6 +423,8 @@ footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px}
     </div>
   </div>
 </section>
+
+<a class="wa-float" href="https://wa.me/201157686680" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></a>
 
 <footer>© <span id="y">2026</span> Hebatallah Ibrahim</footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
